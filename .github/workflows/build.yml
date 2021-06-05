@@ -14,8 +14,12 @@ jobs:
           git clone https://github.com/alliedmodders/sourcemod --recursive -b 1.10-dev
           git clone https://github.com/alliedmodders/metamod-source -b 1.10-dev
           git clone https://github.com/alliedmodders/hl2sdk -b csgo hl2sdk-csgo
+          git clone -b 2.1-distutils https://github.com/alliedmodders/ambuild
       - name: Build
         run: |
+          cd ambuild
+          sudo python3 setup.py install
+          cd ..
           mkdir build
           cd build
           python ../configure.py --enable-optimize --mms-path "./metamod-source" --sm-path "./sourcemod" --hl2sdk-root . --sdks csgo
