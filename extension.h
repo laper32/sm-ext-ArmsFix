@@ -39,7 +39,7 @@
 
 #include "smsdk_ext.h"
 
-sp_nativeinfo_t g_Natives[];
+extern sp_nativeinfo_t g_Natives[];
 
 /**
  * @brief Sample implementation of the SDK Extension.

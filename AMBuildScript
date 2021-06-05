@@ -169,7 +169,7 @@ class ExtensionConfig(object):
       '-pipe',
       '-fno-strict-aliasing',
       '-Wall',
-      '-Werror',
+      '-Wno-error',
       '-Wno-unused',
       '-Wno-switch',
       '-Wno-array-bounds',

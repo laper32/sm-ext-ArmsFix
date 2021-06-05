@@ -10,7 +10,7 @@ jobs:
       - name: Dep install
         run: |
           sudo apt-get update
-          sudo apt install gcc-multilib
+          sudo apt-get install -y gcc-multilib g++-multilib binutils python3-setuptools
           git clone https://github.com/alliedmodders/sourcemod --recursive -b 1.10-dev
           git clone https://github.com/alliedmodders/metamod-source -b 1.10-dev
           git clone https://github.com/alliedmodders/hl2sdk -b csgo hl2sdk-csgo
@@ -20,7 +20,4 @@ jobs:
           cd ..
       - name: Build
         run: |
-          mkdir build
-          cd build
-          python3 ../configure.py --enable-optimize --mms-path "./metamod-source" --sm-path "./sourcemod" --hl2sdk-root ./hl2sdk-csgo --sdks csgo
-          ambuild
+          bash ./ci/build.sh
