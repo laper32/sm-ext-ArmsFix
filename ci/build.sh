@@ -1,9 +1,14 @@
 #!/bin/bash
 
+git fetch --unshallow
+
 MAJOR=1
 MINOR=0
 COUNT=$(git rev-list --count HEAD)
+DATE=$(date +"%Y-%m-%d %H:%M:%S")
+
 echo "Version: $MAJOR.$MINOR.$COUNT"
+echo "Build date: $DATE"
 
 for file in smsdk_config.h
 do
