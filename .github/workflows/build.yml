@@ -22,5 +22,5 @@ jobs:
         run: |
           mkdir build
           cd build
-          python3 ../configure.py --enable-optimize --mms-path "./metamod-source" --sm-path "./sourcemod" --hl2sdk-root . --sdks csgo
+          python3 ../configure.py --enable-optimize --mms-path "./metamod-source" --sm-path "./sourcemod" --hl2sdk-root ./hl2sdk-csgo --sdks csgo
           ambuild
