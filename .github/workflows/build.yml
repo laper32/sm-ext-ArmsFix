@@ -20,7 +20,7 @@ jobs:
           cd ..
       - name: Build
         run: |
-          EXT_DIR=${pwd}
+          EXT_DIR=$(pwd)
           mkdir build
           cd build
           python3 ${EXT_DIR}/configure.py --enable-optimize --mms-path "${EXT_DIR}/metamod-source" --sm-path "${EXT_DIR}/sourcemod" --hl2sdk-root "${EXT_DIR}" --sdk csgo
