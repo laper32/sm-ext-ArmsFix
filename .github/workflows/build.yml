@@ -1,0 +1,22 @@
+name: Build-test
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Dep install
+        run: |
+          sudo apt-get update
+          sudo apt install gcc-multilib
+          git clone https://github.com/alliedmodders/sourcemod --recursive -b 1.10-dev
+          git clone https://github.com/alliedmodders/metamod-source -b 1.10-dev
+          git clone https://github.com/alliedmodders/hl2sdk -b csgo hl2sdk-csgo
+      - name: Build
+        run: |
+          mkdir build
+          cd build
+          python ../configure.py --enable-optimize --mms-path "./metamod-source" --sm-path "./sourcemod" --hl2sdk-root . --sdks csgo
+          ambuild
