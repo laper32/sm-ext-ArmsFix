@@ -10,7 +10,7 @@ jobs:
       - name: Dep install
         run: |
           sudo apt-get update
-          sudo apt-get install -y gcc-multilib g++-multilib binutils python3-setuptools
+          sudo apt-get install -y gcc-multilib g++-multilib binutils python3-setuptools clang-10
           git clone https://github.com/alliedmodders/sourcemod --recursive -b 1.10-dev
           git clone https://github.com/alliedmodders/metamod-source -b 1.10-dev
           git clone https://github.com/alliedmodders/hl2sdk -b csgo hl2sdk-csgo

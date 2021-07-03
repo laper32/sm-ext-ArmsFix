@@ -19,5 +19,5 @@ done
 EXT_DIR=$(pwd)
 mkdir build
 cd build
-python3 ${EXT_DIR}/configure.py --enable-optimize --mms-path "${EXT_DIR}/metamod-source" --sm-path "${EXT_DIR}/sourcemod" --hl2sdk-root "${EXT_DIR}" --sdk csgo
+CC=clang-10 CXX=clang++-10 python3 ${EXT_DIR}/configure.py --enable-optimize --mms-path "${EXT_DIR}/metamod-source" --sm-path "${EXT_DIR}/sourcemod" --hl2sdk-root "${EXT_DIR}" --sdk csgo
 ambuild
